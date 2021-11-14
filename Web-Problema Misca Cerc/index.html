@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <style>
+            #patrat {
+                width:200px;
+                height:200px;
+                border:5px solid #000;
+                position: absolute;
+                top: 0px;
+                left: 500px;
+            }
+
+            #cerc {
+                width:200px;
+                height:200px;
+                border:5px solid #000;
+                position: absolute;
+                border-radius: 50%;
+                top: 5px;
+                left: 100px;
+            }
+
+        </style>        
+    </head>
+    <body>
+        
+        <div id="cerc"></div>
+        <script>
+
+            var pozCurenta = 100
+            var pozFin = 700
+            var speed = 0.7
+
+            function setPosition() {
+                pozCurenta += speed
+                document.getElementById("cerc").style.left = pozCurenta + "px"
+                document.getElementById("cerc").style.top = pozCurenta + "px"
+            }
+
+            function move() {
+
+                if ( pozCurenta > pozFin) {
+                    return
+                }
+
+                setTimeout(function() {
+                    setPosition()
+                    move()
+                }, 1);
+            }
+
+
+            
+
+            move()
+
+        </script>
+        
+
+    </body>
+</html>

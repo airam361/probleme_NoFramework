@@ -1,0 +1,92 @@
+<html>
+<body>
+<script>
+
+var aprozar= [{
+    "nume_produs": "rosii",
+    "pret": 24,
+    "cantitate": 1
+}, {
+    "nume_produs": "castraveti",
+    "pret": 16,
+    "cantitate": 1
+}, {
+    "nume_produs": "nuci",
+    "pret": 10,
+    "cantitate": 0.1
+}, {
+    "nume_produs": "banane",
+    "pret": 5,
+    "cantitate": 1
+}
+]
+
+var Ionescu ={
+    "nume": "Ionescu",
+    "produse_cumparate": [],
+    "total_cost": 0
+}
+
+var Popescu ={
+    "nume": "Popescu",
+    "produse_cumparate": [],
+    "total_cost": 0
+}
+
+var Georgescu ={
+    "nume": "Georgescu",
+    "produse_cumparate": [],
+    "total_cost": 0
+}
+
+function cost(produs_cautat, cantitate_cumparata){
+    var Total =0;
+    for ( var j=0; j < aprozar.length; j++){
+            if ( produs_cautat == aprozar[j]["nume_produs"]){
+            Total = cantitate_cumparata * aprozar[j]["pret"] / aprozar[j]["cantitate"]
+        }
+    }    
+    return Total;
+}
+
+function Ionescu_cumpara(produse){   //[[2,"rosii"],[1,"castraveti"],[0.5,"nuci"]]
+    for ( var i=0; i < produse.length; i++ ){
+        Ionescu["produse_cumparate"].push(produse[i][1]);        
+        Ionescu["total_cost"] += cost(produse[i][1],produse[i][0]);
+    }   
+}
+
+function Popescu_cumpara(produse){   //[[0.5,"rosii"],[3,"castraveti"],[1,"nuci"]]
+    for ( var i=0; i < produse.length; i++ ){
+        Popescu["produse_cumparate"].push(produse[i][1]);        
+        Popescu["total_cost"] += cost(produse[i][1],produse[i][0]);
+    }    
+}
+
+function Georgescu_cumpara(produse){   //[[1,"rosii"],[0.5,"castraveti"]]
+    for ( var i=0; i < produse.length; i++ ){
+        Georgescu["produse_cumparate"].push(produse[i][1]);        
+        Georgescu["total_cost"] += cost(produse[i][1],produse[i][0]);   
+    }
+}
+
+function afisare(client){
+    console.log("Nume client: " + client["nume"] + ", " + "Produse cumparate: " + "(" + client["produse_cumparate"] + ")" + ", " + "Total cost: " + client["total_cost"]);
+}
+
+Ionescu_cumpara([[2,"rosii"],[1,"castraveti"],[0.5,"nuci"],[1,"banane"]]);
+Popescu_cumpara([[0.5,"rosii"],[3,"castraveti"],[1,"nuci"]]);
+Georgescu_cumpara([[1,"rosii"],[0.5,"castraveti"]]);
+
+afisare(Ionescu);
+afisare(Popescu);
+afisare(Georgescu);
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<html>
+<body>
+<script>
+
+/////////------ Problema 1 ------/////////
+
+function convertor(mySecunde){
+    var ani = 0;
+    var luni = 0;
+    var zile = 0;
+    var ore = 0;
+    var minute = 0;
+    var secunde = 0;
+
+    var minut = 60;
+    var ora = 60 * minut
+    var zi = 24 * ora;
+    var luna = 30 * zi; 
+    var an = 12 * luna;
+ 
+    var restulDinAni = mySecunde % an;  
+    ani = (mySecunde - restulDinAni) / an;
+
+    var restulDinLuni =  restulDinAni % (luna);
+    luni = (restulDinAni - restulDinLuni) / (luna);
+
+    var restulDinZile =  restulDinLuni % (zi);
+    zile = (restulDinLuni - restulDinZile) / zi;
+
+    var restulDinOre =  restulDinZile % ora;
+    ore = (restulDinZile - restulDinOre) / ora;
+
+    var restulDinMinute =  restulDinOre % minut;
+    minute = (restulDinOre - restulDinMinute) / minut;
+
+    secunde = restulDinMinute;
+ 
+    console.log(
+        mySecunde + " de secunde reprezinta: \n" + 
+        + ani + " Ani, " + luni + " Luni, " + zile + " Zile, " + ore + " Ore, " + minute + " Minute, " + secunde + " Secunde. "
+    )
+}
+
+//convertor(52678598);
+
+</script>
+
+
+<script>
+/////////------ Problema 2 ------/////////
+
+function afisare2(operatie, a, b, rezultat) {
+    console.log(a + " " + operatie + " " + b + " = " + rezultat)
+}
+
+function calculator(operatie, a, b){
+    if ((typeof a != "number") && (typeof b != "number")) {
+        console.log(a + " si " + b + " nu sunt numere!");
+        return;
+    }
+        
+    if (typeof a != "number") {
+        console.log(a + " nu este un numar!");
+        return;
+    } else if (typeof b != "number") {
+        console.log(b + " nu este un numar!");
+        return;
+    }
+
+    switch (operatie) {
+        case "+": afisare2(operatie, a, b, a + b);
+        break;
+        case "-": afisare2(operatie, a, b, a - b);
+        break;
+        case "x": afisare2(operatie, a, b, a * b);
+        break;
+        case "/": afisare2(operatie, a, b, a / b);
+        break
+        default: console.log("Operatia nu este suportata!")
+    }
+}
+
+//calculator("+" , "2", 4);
+
+</script>
+
+
+
+<script>
+
+/////////------ Problema 3 ------/////////
+
+function Invers(val) {
+    var numarInvers = 0;
+    var myArray = [];
+    var rest = 0;
+    var nr=val;
+
+    if (isNaN(val)){
+        console.log("Valoarea introdusa nu este un numar!");
+        return;
+    } else if (val < 10) {
+        console.log("Numarul trbuie sa fie alcatuit din cel putin 2 cifre!");
+        return;
+    }
+
+    do{
+        rest = val % 10;
+        myArray.push(rest); 
+        val = (val - rest) / 10;
+
+    } while (val != 0)
+    
+    numarInvers= myArray[0];
+
+    for (var i = 1; i<myArray.length; i++){
+        numarInvers = numarInvers *10 + myArray[i];
+    }
+    
+    console.log("Inversul numarului " + nr + " este: " + numarInvers);
+}
+//Invers(120);
+
+function Invers2(val) {  //////// asta este a lu' CATALIN
+    var myArray = [];
+    var rest = 0;
+    var nr=val;
+
+    if (isNaN(val)){
+        console.log("Valoarea introdusa nu este un numar!");
+        return;
+    } else if (val < 10) {
+        console.log("Numarul trbuie sa fie alcatuit din cel putin 2 cifre!");
+        return;
+    }
+
+    var numarString = "" + val;
+
+    for (var i=numarString.length-1; i >= 0; i--){
+        myArray.push(numarString[i]);
+    }
+                
+    console.log("Inversul numarului " + nr + " este: " + myArray.join(''));
+}
+//Invers2(120);
+
+</script>
+
+<script>
+/////////------ Problema 4 ------/////////
+
+var Alice = "abc"
+var vocale = ["a","e","i","o","u","A","E","I","O","U"]
+
+function eVocala(litera){
+    for (var j = 0; j < vocale.length; j++) {
+        if (litera == vocale[j]) {
+            return true
+        }
+    }
+    return false
+}
+
+function criptare_b(string){
+    var strCriptat = ""
+
+    for (var i = 0; i < string.length; i++) {
+        if(eVocala(string[i])) {
+            strCriptat += string[i] + "p" + string[i]
+        } else {
+            strCriptat += string[i] 
+        }
+    }
+
+    // for (var i = 0; i < string.length; i++) {
+    //     var eVocala = false
+    //     for (var j = 0; j < vocale.length; j++) {
+    //         if (string[i] == vocale[j]) {
+    //             eVocala = true
+    //         }
+    //     }
+
+    //     if(eVocala) {
+    //         strCriptat += string[i] + "p" + string[i]
+    //     } else {
+    //         strCriptat += string[i] 
+    //     }
+    // }
+
+    return strCriptat
+}
+
+//console.log(criptare_b(Alice))
+
+
+var alfabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+function deplasareLaDreapta (x, litera) {
+    var literaDeplasata = " "
+    var pozitiaDeplasata = 0
+    for (var i = 0; i < alfabet.length; i++) {
+        if (litera == alfabet[i]) {
+            pozitiaDeplasata = (i+x)%alfabet.length
+            literaDeplasata = alfabet[pozitiaDeplasata]
+        }
+    }
+    return literaDeplasata
+}
+
+function deplasareLaStanga (x, litera) {
+    var literaDeplasata = " "
+    var pozitiaDeplasata = 0
+    for (var i = 0; i < alfabet.length; i++) {
+        if (litera == alfabet[i]) {
+            if (i-x < 0) {
+                pozitiaDeplasata = (i-x)%alfabet.length + alfabet.length
+                literaDeplasata = alfabet[pozitiaDeplasata]
+
+            } else {
+                pozitiaDeplasata = (i-x)%alfabet.length
+                literaDeplasata = alfabet[pozitiaDeplasata]
+            }            
+        }
+    }
+
+    return literaDeplasata
+}
+
+
+function criptare_a(x,string) {
+    var strCriptat = ""
+
+    for (var i = 0; i < string.length; i++) {
+        strCriptat += deplasareLaDreapta(x, string[i])
+    }
+
+    return strCriptat
+}
+
+function decriptare_a(x,string) {
+    var strDecriptat = ""
+
+    for (var i = 0; i < string.length; i++) {
+        strDecriptat += deplasareLaStanga(x, string[i])
+    }
+
+    return strDecriptat
+}
+
+
+console.log(criptare_a(30,"xyz fss"))
+
+console.log(decriptare_a(30,"bcd"))
+
+</script>
+</body>
+</html>

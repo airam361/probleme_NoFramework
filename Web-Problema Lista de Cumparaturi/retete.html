@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">        
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white p-0">
+            <div class="container-fluid p-2 bg-gradient" style="background-color: rgba(108, 202, 54, 0.75);">
+                <a class="navbar-brand" href="#">
+                    <div class="row">
+                        <div class="col-2 ps-3"> 
+                            <img src="https://cdn-icons-png.flaticon.com/512/5230/5230364.png" alt="" width="55" height="55" class="d-inline-block align-text-top">
+                        </div>
+                        <div class="col-7"> 
+                            <div class="text-black fs-2 fw-bold " style="display:inline-block">Lista de cumparaturi</div>
+                        </div>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link mb-0" aria-current="page" href="http://34.116.233.145/files/code_projects/bianca/Web-Problema%20Lista%20de%20Cumparaturi/produse.html"> <h4 class="mb-0">Produse</h4>  </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active mb-0" href="http://34.116.233.145/files/code_projects/bianca/Web-Problema%20Lista%20de%20Cumparaturi/retete.html"><h4 class="mb-0">Retete</h4></a>
+                        </li>   
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container w-50" style="margin-top: 100px;"> 
+       
+            <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    
+                    <div class="carousel-item active">
+                        <div class="caruselImageCenter">
+                            <img src="https://jamilacuisine.ro/wp-content/uploads/2021/05/Gogosi-umplute-cu-ciocolata.jpg" class="d-block w-100" >
+                            <div class="carousel-caption d-none d-md-block pt-2 pb-2">
+                                <h5>Gogosi umplute cu ciocolata</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="caruselImageCenter">
+                            <img src="https://i.ytimg.com/vi/6Zg5vFuHZPM/maxresdefault.jpg" class="d-block  w-100">
+                            <div class="carousel-caption d-none d-md-block pt-2 pb-2">
+                                <h5>Tort tiramisu</h5>
+                            </div>   
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="caruselImageCenter">
+                            <img src="https://i.ytimg.com/vi/OEJYWfsP_Nc/maxresdefault.jpg" class="d-block w-100">
+                            <div class="carousel-caption d-none d-md-block pt-2 pb-2">
+                                <h5>Pui la cuptor</h5>
+                            </div>  
+                        </div>
+                    </div>
+
+                </div>
+                <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" >
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next" >
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+       
+        <div class="recepie_area" >           
+            <div class="container">
+                <div class="row" id="prezentareRetete">
+                    <!-- template javascript -->
+                </div>
+            </div> 
+        </div> 
+
+        <div class="container" id="reteta" style="display: none;">
+            <!-- template javascript -->
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>                                              
+        <script src="retete.js"></script>
+    </body>
+</html>

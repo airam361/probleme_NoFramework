@@ -1,0 +1,115 @@
+<html>
+
+<body>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+        integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        var Animal = function(animalTypeParam, countParam) {
+            this.animalType = animalTypeParam
+            this.count = countParam
+
+
+            this.getLegs = function() {
+                switch(this.animalType) {
+                    case 'chicken': return 2
+                    case 'cow': return 4
+                    case 'pig': return 4
+                }
+            }
+
+            this.countLegs = function () {
+                return this.count * this.getLegs()
+            }
+
+            this.getName = function () {
+                switch(this.animalType) {
+                    case 'chicken': return "Chicken"
+                    case 'cow': return "Cow"
+                    case 'pig': return "Pig"
+                }
+            }
+
+            this.print = function () {
+                console.log(this.getName() + ": " + "Number: " + this.count + " Total legs: " + this.countLegs())
+            }
+        }
+
+
+        
+
+        var farm = {
+            "chicken": 10,
+            "cows": 5,
+            "pigs": 5
+        }
+
+        var cows = new Animal('cow', farm.cows)
+        var chicken = new Animal('chicken', farm.chicken)
+        var pigs = new Animal('pig', farm.pigs)
+
+        chicken.print()
+        cows.print()
+        pigs.print()
+
+        console.log (
+            "Total legs: "  + (
+                    cows.countLegs() + 
+                    pigs.countLegs() + 
+                    chicken.countLegs()
+                )
+            )
+
+    </script> -->
+
+    <script>
+
+        function cypher(string) {
+            //cel mai mic multiplu de 4 mai mare sau egal cu lungimea sirului
+            var multiplu = 1
+            for(var i=2; i < string.length; i++) {
+                if( 4*i >= string.length) {
+                    multiplu = i
+                    break 
+                }
+            }
+
+            console.log('fits in a ' + multiplu + 'X' + multiplu + ' square')
+            var squareCells = multiplu * 4
+
+            var pozitii = []
+            for(var m=multiplu, p=0; m > 0; m-=2, p-=1) {
+                for(var k = 0; k < m; k++) {
+                    var clock = 4*k
+
+                    pozitii[p] = pozitii[p] || [] 
+                    pozitii[k] = pozitii[k] || []
+                    pozitii[m-1-p] = pozitii[m-1-p] || []
+                    pozitii[m-k-p] = pozitii[m-k-p] || []
+
+                    pozitii[p][k] = string[0 + clock] || ' '
+                    pozitii[k][m-1-p] = string[1 + clock] || ' '
+                    pozitii[m-1-p][m-k-p] = string[2 + clock]  || ' '
+                    pozitii[m-k-p][p] = string[3 + clock] || ' '
+                }
+            }
+
+            //unim randurile pe orizontala
+            var final = ''
+            for(var i=0; i< multiplu; i++) {
+                for(var j=0; j< multiplu; j++) 
+                    final += pozitii[i][j] || ' '
+            }
+
+            console.log(final)
+
+        }
+
+        cypher("Mubashir Hassan")
+        cypher("bianca")
+
+    </script>
+</body>
+
+</html>

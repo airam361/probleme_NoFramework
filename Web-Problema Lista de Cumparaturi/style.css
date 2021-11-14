@@ -1,0 +1,45 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.caruselImageCenter {
+    margin-left: 150px;
+    margin-right: 150px; 
+    margin-bottom: 70px;
+}
+
+.recepie_area {
+    padding-top: 50px;    
+}
+
+.single_recepie {
+    margin-bottom: 80px;
+}
+
+.recepie_thumb {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+}
+
+.btn_view_recepie {
+    border-radius: 30px;
+}
+
+.img_recepie {
+    position: absolute;
+    width: 535px;
+    display: block; 
+    top: 0px;
+    left: -89px;
+    
+}
+
+.recepie_thumb:hover > .img_recepie {
+    transition: all .3s;
+    transform: scale(1.5); 
+}
+

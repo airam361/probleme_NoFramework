@@ -1,0 +1,390 @@
+<html>
+<body>
+<script>
+
+/////////------ Problema 1 ------/////////
+
+function  transformareInBazaX(nr, baza) {
+    var nrTransformat = []
+    var nrAfisare = nr
+    do {
+        nrTransformat.unshift(nr%baza)
+        nr = (nr - nr%baza) / baza
+
+    } while (nr/baza > 0)
+
+    var str= ""
+    for (var i=0; i < nrTransformat.length; i++) {
+        str += nrTransformat[i]
+    }
+
+    console.log("Numarul " + nrAfisare + " transformat in baza " + baza + " este: " + str)
+}
+
+//transformareInBazaX(123,3)
+
+
+/////////------ Problema 2 ------/////////
+
+function problema2 (arr) {
+    var arrCuNumere = [] 
+    for (var i=0; i < arr.length; i++) {
+
+        if ( typeof arr[i] === "number") {
+            arrCuNumere.push(arr[i])
+        }
+    }
+
+    console.log("Doar numerele sunt: " , arrCuNumere)
+}
+
+//problema2([1, "1", "a",22])
+
+
+/////////------ Problema 3 ------/////////
+
+var vocale = ["a","e","i","o","u","A","E","I","O","U"] 
+
+function eVocala(litera){
+    for (var j = 0; j < vocale.length; j++) {
+        if (litera == vocale[j]) {
+            return true
+        }
+    }
+    return false
+}
+
+function faraVocale (str) {
+    var strFaraVocale = ""
+    for (var i=0; i < str.length; i++) {
+
+        if (eVocala(str[i]) == false ) {
+            strFaraVocale += str[i]
+        }
+    }
+    console.log("Sirul fara vocale este: " + strFaraVocale)
+}
+
+//faraVocale("bianca")
+
+
+/////////------ Problema 4 ------/////////
+
+var myObj = [
+    {cuvant: "trist",
+     emoticon : ":("
+    },
+    {cuvant: "ranjet",
+     emoticon : ":)"
+    },
+    {cuvant: "zambet",
+     emoticon : ":D"
+    },
+    {cuvant: "nervos",
+     emoticon : ":P"
+    }
+]
+
+function spargeInCuvinte (str) {
+    
+    var arr = []
+    var cuvant = ""
+    
+    for (var i=0; i < str.length; i++) {
+        switch(str[i]) {
+            case " ":
+                arr.push(cuvant)
+                arr.push(" ") 
+                cuvant = ""
+                break;
+            case ",":
+                arr.push(cuvant)
+                arr.push(",")  
+                cuvant = ""
+                break;
+            case ":":
+                arr.push(cuvant)
+                arr.push(":") 
+                cuvant = ""
+                break;    
+            case ";":
+                arr.push(cuvant)
+                arr.push(";")  
+                cuvant = ""
+                break;
+            case ".":
+                arr.push(cuvant)
+                arr.push(".")  
+                cuvant = ""
+                break;  
+            case "?":
+                arr.push(cuvant)
+                arr.push("?")  
+                cuvant = ""
+                break;
+            case "!":
+                arr.push(cuvant)
+                arr.push("!")  
+                cuvant = ""
+                break; 
+            default:
+                cuvant += str[i];
+        }
+        
+    }
+
+    return arr
+}
+
+function replace (str) {
+    for (var i = 0; i < myObj.length; i++) {
+        if (str == myObj[i].cuvant) {
+            return myObj[i].emoticon
+        }
+    }
+    return str
+}
+
+function afisare4 (arr) {
+    var strAfisare =""
+    for (var i=0; i < arr.length; i++) {        
+        strAfisare += arr[i]
+    }
+    console.log("Propozitia \"emotionata\" este: " + strAfisare)
+}
+
+function emoProp (str) {
+    var arr = spargeInCuvinte(str)
+    for (var i=0; i < arr.length; i++) {        
+        arr[i] = '' + replace(arr[i])
+    }
+    afisare4(arr)
+}
+
+//emoProp("El, are: un; ranjet.")
+
+
+function f (sir) {  //// facuta de Catalin
+    emoMap = {
+        "trist": ":(",
+        "ranjet": ":)",
+        "zambet": ":D",
+        "nervos": ":P"
+    }
+
+    var keys = Object.keys(emoMap)
+    for(var i=0; i< keys.length; i++) {
+        sir = sir.replaceAll(keys[i], emoMap[keys[i]])
+    }
+
+    console.log(sir)
+}
+
+//f("El, are: un; ranjet. dar este nervos rau pentru ca zambetul la el nu are un dinte trist, dar ranjet zambet trist ranjet")
+
+/////////------ Problema 5 ------/////////
+
+function mediaAritmetica(arr) {
+    var sum=0;
+    for (var i=0; i < arr.length; i++) {        
+        sum += arr[i]
+    }
+    console.log("Media aritmetica este: " + sum/arr.length) 
+}
+
+//mediaAritmetica([1,2,3,])
+
+
+/////////------ Problema 6 ------/////////
+
+function minimMaxim(arr) {
+    var min = arr[0]
+    var max = arr[0]
+    for (var i=1; i < arr.length; i++) {        
+        if (min > arr[i]){
+            min = arr[i]
+        }
+        if (max < arr[i]){
+            max = arr[i]
+        }
+    }
+    console.log("Minimul este: " + min + "\nMaximul este: " + max)
+}
+
+//minimMaxim([1,2,2,3,4,3,2,1])
+
+
+/////////------ Problema 7 ------///////// nu-i corect asa! pentru ca se altereaza lungimea vectorului pe masarua ce se parcurge si se scot elemente dn el
+
+function elimDuplicate(arr) {
+    for (var i=0; i < arr.length; i++) {        
+        for (var j=i+1; j < arr.length; j++) {        
+            if (arr[i] == arr[j]){
+                arr.splice(j,1)
+            }
+        }
+    }
+    console.log("Sirul de numere fara duplicate este: " + arr)
+
+}
+
+function eliminDuplicateDiferit(vector) {  //// varianta mai corecta data de Catalin
+    var unic = []
+    for (var i=0; i < vector.length; i++) {
+        if(unic.indexOf(vector[i]) === -1) {
+            unic.push(vector[i])
+        }
+    }
+
+    console.log(unic)
+
+}
+
+//elimDuplicate([1,2,2,3,4,3,2,1])
+//eliminDuplicateDiferit([1,2,2,3,4,3,2,1])
+
+
+/////////------ Problema 8 ------/////////
+
+
+function sumaNrDiv(arr, nr) {
+    var sum=0;
+    for (var i=0; i < arr.length; i++) {        
+        if (arr[i]%nr == 0) {
+            sum += arr[i]
+        }        
+    } 
+    console.log("Suma numerelor divizible cu " + nr + " este: " + sum) 
+}
+
+//sumaNrDiv([1,2,3,4], 2)
+//sumaNrDiv([1,2,3,4], 5)
+
+
+/////////------ Problema 9 ------/////////
+
+function invers(str) {
+    var strInversat = ""
+    for (var i=str.length-1; i >= 0; i--) {        
+        strInversat += str[i]
+    }
+    return strInversat
+}
+
+function ePalindrom(str, strInversat) {
+    for (var i=0; i < str.length; i++) {        
+        if (str[i] != strInversat[i]) {
+            return false
+        }
+    }
+    return true
+}
+
+function palindrom(str) {
+    var strInversat = invers(str)
+    if (ePalindrom(str,strInversat) == true) {
+        console.log("Sirul este Palindrom!")
+    } else {
+        console.log("Sirul nu este Palindrom!")
+    }
+}
+
+//palindrom("ana")
+
+
+/////////------ Problema 10 ------/////////
+
+function metodaBulelorCresc(arr) {  
+    do {
+        var SW = 0
+        var schimb = 0
+        for (var i=0; i<arr.length; i++) {
+            if( arr[i] > arr[i+1]) {
+                schimb = arr[i+1]
+                arr[i+1] = arr[i]
+                arr[i] = schimb
+                SW = 1
+            }
+        }
+    } while( SW == 1 )
+
+    return arr
+}
+
+function metodaBulelorDescresc(arr) {  
+    do {
+        var SW = 0
+        var schimb = 0
+        for (var i=0; i<arr.length; i++) {
+            if( arr[i] < arr[i+1]) {
+                schimb = arr[i+1]
+                arr[i+1] = arr[i]
+                arr[i] = schimb
+                SW = 1
+            }
+        }
+    } while( SW == 1 )
+
+return arr
+}
+
+function metodaInsertieDirecta (arr) {
+    var arrOrdonat = []
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < arrOrdonat.length; j++) {
+        
+            if (arr[i] < arrOrdonat[j]){
+
+
+
+            }
+        
+        
+        
+
+         
+
+        
+        
+
+        }
+    }
+    return arrOrdonat
+}
+
+
+console.log(metodaBulelorCresc([5,9,2,7,4,36,24,96,3,6,5,9,743]))
+console.log(metodaBulelorDescresc([5,9,2,7,4,36,24,96,3,6,5,9,743]))
+
+
+
+/////////------ Problema 11 ------/////////
+
+
+function numeSocietateSecreta (arr) {
+    var arrInitiale = []
+    var arrInitialeSortate =[]    
+    for (var i = 0; i < arr.length; i++) {
+        arrInitiale[i] = arr[i].slice(0,1)
+    }
+
+    arrInitialeSortate = metodaBulelorCresc(arrInitiale)      
+
+    console.log("Numele societatii secrete este: " + arrInitialeSortate.join(""))
+}
+
+numeSocietateSecreta(["Victor", "Ioana", "Liviu"])
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
+
+
+
