@@ -31,7 +31,7 @@
                         <table class="center-container" > 
                             <tr>
                                 <td class="all-centered">
-                                    <button id="btnStart" type="button" class="btn btn-primary btn-lg" onclick="start()">Start</button>
+                                    <button id="btnStart" type="button" class="btn btn-primary btn-lg" onclick="setJoc()">Start</button>
                                 </td>
                             </tr>
                         </table>               
@@ -43,39 +43,39 @@
                                     <table class="alfabet" id="alfabet">                            
                                         <tbody>
                                             <tr>
-                                                <td class="text-center" type="button" id="a" onclick="incearca(this.id)">A</td>
-                                                <td class="text-center" type="button" id="b" onclick="incearca(this.id)">B</td>
-                                                <td class="text-center" type="button" id="c" onclick="incearca(this.id)">C</td>
-                                                <td class="text-center" type="button" id="d" onclick="incearca(this.id)">D</td>
-                                                <td class="text-center" type="button" id="e" onclick="incearca(this.id)">E</td>
-                                                <td class="text-center" type="button" id="f" onclick="incearca(this.id)">F</td>
-                                                <td class="text-center" type="button" id="g" onclick="incearca(this.id)">G</td>
+                                                <td class="text-center" type="button" id="a" onclick="tryLitera(this.id)">A</td>
+                                                <td class="text-center" type="button" id="b" onclick="tryLitera(this.id)">B</td>
+                                                <td class="text-center" type="button" id="c" onclick="tryLitera(this.id)">C</td>
+                                                <td class="text-center" type="button" id="d" onclick="tryLitera(this.id)">D</td>
+                                                <td class="text-center" type="button" id="e" onclick="tryLitera(this.id)">E</td>
+                                                <td class="text-center" type="button" id="f" onclick="tryLitera(this.id)">F</td>
+                                                <td class="text-center" type="button" id="g" onclick="tryLitera(this.id)">G</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-center" type="button" id="h" onclick="incearca(this.id)">H</td>
-                                                <td class="text-center" type="button" id="i" onclick="incearca(this.id)">I</td>
-                                                <td class="text-center" type="button" id="j" onclick="incearca(this.id)">J</td>
-                                                <td class="text-center" type="button" id="k" onclick="incearca(this.id)">K</td>
-                                                <td class="text-center" type="button" id="l" onclick="incearca(this.id)">L</td>
-                                                <td class="text-center" type="button" id="m" onclick="incearca(this.id)">M</td>
-                                                <td class="text-center" type="button" id="n" onclick="incearca(this.id)">N</td>
+                                                <td class="text-center" type="button" id="h" onclick="tryLitera(this.id)">H</td>
+                                                <td class="text-center" type="button" id="i" onclick="tryLitera(this.id)">I</td>
+                                                <td class="text-center" type="button" id="j" onclick="tryLitera(this.id)">J</td>
+                                                <td class="text-center" type="button" id="k" onclick="tryLitera(this.id)">K</td>
+                                                <td class="text-center" type="button" id="l" onclick="tryLitera(this.id)">L</td>
+                                                <td class="text-center" type="button" id="m" onclick="tryLitera(this.id)">M</td>
+                                                <td class="text-center" type="button" id="n" onclick="tryLitera(this.id)">N</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-center" type="button" id="o" onclick="incearca(this.id)">O</td>
-                                                <td class="text-center" type="button" id="p" onclick="incearca(this.id)">P</td>
-                                                <td class="text-center" type="button" id="q" onclick="incearca(this.id)">Q</td>
-                                                <td class="text-center" type="button" id="r" onclick="incearca(this.id)">R</td>
-                                                <td class="text-center" type="button" id="s" onclick="incearca(this.id)">S</td>
-                                                <td class="text-center" type="button" id="t" onclick="incearca(this.id)">T</td>
-                                                <td class="text-center" type="button" id="u" onclick="incearca(this.id)">U</td>
+                                                <td class="text-center" type="button" id="o" onclick="tryLitera(this.id)">O</td>
+                                                <td class="text-center" type="button" id="p" onclick="tryLitera(this.id)">P</td>
+                                                <td class="text-center" type="button" id="q" onclick="tryLitera(this.id)">Q</td>
+                                                <td class="text-center" type="button" id="r" onclick="tryLitera(this.id)">R</td>
+                                                <td class="text-center" type="button" id="s" onclick="tryLitera(this.id)">S</td>
+                                                <td class="text-center" type="button" id="t" onclick="tryLitera(this.id)">T</td>
+                                                <td class="text-center" type="button" id="u" onclick="tryLitera(this.id)">U</td>
                                             </tr>
                                             <tr>
                                                 <td class="no-intereactions" type="button" style="border-color: white;"></td>
-                                                <td class="text-center" type="button" id="v" onclick="incearca(this.id)">V</td>
-                                                <td class="text-center" type="button" id="w" onclick="incearca(this.id)">W</td>
-                                                <td class="text-center" type="button" id="x" onclick="incearca(this.id)">X</td>
-                                                <td class="text-center" type="button" id="y" onclick="incearca(this.id)">Y</td>
-                                                <td class="text-center" type="button" id="z" onclick="incearca(this.id)">Z</td>
+                                                <td class="text-center" type="button" id="v" onclick="tryLitera(this.id)">V</td>
+                                                <td class="text-center" type="button" id="w" onclick="tryLitera(this.id)">W</td>
+                                                <td class="text-center" type="button" id="x" onclick="tryLitera(this.id)">X</td>
+                                                <td class="text-center" type="button" id="y" onclick="tryLitera(this.id)">Y</td>
+                                                <td class="text-center" type="button" id="z" onclick="tryLitera(this.id)">Z</td>
                                                 <td class="no-intereactions" type="button" style="border-color: white;"></td>
                                             </tr>                                                
                                         </tbody>
@@ -88,7 +88,6 @@
             </div> 
         </div>
         
-
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">

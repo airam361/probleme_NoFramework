@@ -26,7 +26,7 @@ const createTemplate=(str)=> {
     return template
 }
 
-const start=()=>{
+const setJoc=()=>{
     let container = document.getElementById("cuvantDeGhicit")
     changeImg(0)
     state.nrGreseli = 0
@@ -92,7 +92,7 @@ const pozLiteraCorecta=(str)=> {
 
 let myModal = new bootstrap.Modal(document.getElementById('exampleModal'))
 
-const incearca=(id) => {
+const tryLitera=(id) => {
     let literaBtn = document.getElementById(id)
     let litera = literaBtn.innerHTML
     pozLiteraCorecta(litera)
@@ -125,5 +125,5 @@ const incearca=(id) => {
 
 const hideModal=()=>{
     myModal.hide()
-    start()
+    setJoc()
 }

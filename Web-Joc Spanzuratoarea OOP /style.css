@@ -1,0 +1,46 @@
+body {
+    font-family: 'Schoolbell', cursive;
+    
+}
+
+table.alfabet  tr  td {
+    background-color: white;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 17px;    
+    width: 50px;
+    height: 50px;    
+    font-size:188%;
+    margin: 2px;    
+}
+
+table{
+    margin: auto;
+}
+
+.center-container {
+    width: 100%;
+    height:100%; 
+    border: 0;
+}
+
+.all-centered {
+    text-align: center; vertical-align: middle;
+}
+
+.h-20 {
+    height:20%!important;
+}
+
+.h-10 {
+    height:20%!important;
+}
+
+.h-5 {
+    height:5%!important;
+}
+
+.no-intereactions{
+    pointer-events: none;
+    opacity: 0.5;
+}
