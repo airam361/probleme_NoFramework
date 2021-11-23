@@ -1,0 +1,62 @@
+#source {
+    background: wheat;
+    width: 100px;
+    padding: 20px;
+    text-align: center;
+}
+
+#target {
+    background: #abcdef;
+    width: 360px;
+    height: 180px;
+    padding: 20px 40px;
+    text-align: center;
+    margin-top: 50px;
+    box-sizing: border-box;
+}
+
+#cuvAmestecate span{
+    
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    padding: 15px 25px;
+    margin: 0 10px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;  
+}
+
+#cuvOrdonate span{
+    
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    padding: 15px 25px;
+    margin: 0 10px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;  
+}
+
+
+.dropped {
+    animation: catalin 1s;
+}
+
+@keyframes catalin {
+    0% {
+      transform: scale(1);
+    }
+    
+
+    50% {
+        transform: scale(5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

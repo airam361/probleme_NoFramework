@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="1000" height="700"
+style="border:1px solid #d3d3d3;">
+Your browser does not support the canvas element.
+</canvas>
+<hr>
+<div onclick="changeColor('red')" style="display:inline-block; width:30px; height: 30px; background:red">&nbsp;</div>
+<div onclick="changeColor('green')" style="display:inline-block; width:30px; height: 30px; background:green">&nbsp;</div>
+<div  onclick="changeColor('blue')" style="display:inline-block; width:30px; height: 30px; background:blue">&nbsp;</div>
+
+<script>
+var canvas = document.getElementById("myCanvas");
+var draw = false
+var fillStyle = 'black'
+
+
+changeColor = function(color) {
+  fillStyle = color
+}
+
+canvas.addEventListener("mousedown", function(event)  { draw = true})
+canvas.addEventListener("mouseup", function(event)  { draw = false})
+
+drawPath = function(event)  {
+//console.log(event)
+	if(event.type !== "click") {
+		if(!draw) return
+    }
+    
+    var x=event.offsetX, y=event.offsetY
+    var ctx = canvas.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(x,y,10,0,2*Math.PI);
+        ctx.fillStyle = fillStyle;
+        ctx.fill();
+    
+    //console.log(x, y)
+    
+}
+
+canvas.addEventListener("mousemove", drawPath ) 
+canvas.addEventListener("click", drawPath ) 
+</script> 
+
+</body>
+</html>
